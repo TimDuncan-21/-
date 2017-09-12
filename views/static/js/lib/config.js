@@ -4,6 +4,8 @@ require.config({
   baseUrl:'/views/assets',
   paths:{
    jquery:'./jquery/jquery',
-   cookie:'./jquery-cookie/jquery.cookie'
+   cookie:'./jquery-cookie/jquery.cookie',
+   template:'./artTemplate/template'
+  //!!!一定要注意在结尾加逗号！！！！！！！
   }
 })
