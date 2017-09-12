@@ -1,17 +1,6 @@
-
-	// NProgress.start();
-
-	// NProgress.done();
-
-	// $('.navs ul').prev('a').on('click', function () {
-	// 	$(this).next().slideToggle();
-	// });
-
-
-
-
+     //登陆功能
+// ------------------------------------------------------------------
 //因为侧边栏是公用部分，所以放在公共部分
-
   define(['jquery','template','cookie'],function($,template){
 //有返回值的放前面，没返回值的放后面
        $(function(){
@@ -41,6 +30,24 @@
             var html = template("profile_tpl", userinfo);
             $("#profile").html(html);
             }
-        }) 
 
+    // ---------登陆功能结束-------------------------------------------
+
+    // ---------退出功能开始-------------------------------------
+       $('#logout_btn').click(function(){
+        //注册点击事件
+        //想后台发送请求，请求退出
+        $.ajax({
+          url:'api/logout',
+          type:'post',
+          success:function(data){
+            if(data.code==200){
+            //接收到返回来的数据,如果返回成功，就退到登陆页面
+            location.href='/dashboard/login'
+            }
+          }
+        })
+       });
+// -------------退出功能结束--------------------------------------------
+        }) 
   })
